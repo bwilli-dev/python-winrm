@@ -1,0 +1,8 @@
+import winrm
+
+# create a WinRM session
+session = winrm.Session('hostname', auth=('username', 'password'))
+
+# run a command
+result = session.run_cmd('ipconfig', ['/all'])
+print(result.std_out)
